@@ -1,8 +1,8 @@
 const BLOG = {
-  title: 'CRAIGARY',
+  title: 'nlog - the notion blog',
   author: 'Ying Bun',
   email: 'yingbun@gmail.com',
-  link: 'https://yingbunnotionblog.vercel.app',
+  link: 'https://nlog.1024.ee',
   description: 'This gonna be an awesome website.',
   lang: 'en-US',
   appearance: 'auto', // ['light', 'dark', 'auto'],
