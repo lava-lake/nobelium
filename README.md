@@ -1,79 +1,82 @@
-# Nobelium   
-A free and fast blog builder for Notion, and for every creator.
+<img src="https://raw.githubusercontent.com/craigary/nobelium/main/Nobelium-Logo.svg" width="50" height="50">
 
-[[中文说明](README-CN.md) | English] 
+# Nobelium
 
-## Showcases
-Official demo: [https://nobelium.vercel.app/](https://nobelium.vercel.app/)
+A static blog build on top of Notion and Nextjs, deployed on Vercel.
+
+<p>
+  <a aria-label="GitHub commit activity" href="https://github.com/craigary/nobelium/commits/main" title="GitHub commit activity">
+    <img src="https://img.shields.io/github/commit-activity/m/craigary/nobelium?style=for-the-badge">
+  </a>
+  <a aria-label="GitHub contributors" href="https://github.com/craigary/nobelium/graphs/contributors" title="GitHub contributors">
+    <img src="https://img.shields.io/github/contributors/craigary/nobelium?color=orange&style=for-the-badge">
+  </a>
+  <a aria-label="Build status" href="#" title="Build status">
+    <img src="https://img.shields.io/github/deployments/craigary/nobelium/Preview?logo=Vercel&style=for-the-badge">
+  </a>
+</p>
+
+[[中文说明](README-CN.md) | English]
+
+Demo: [https://nobelium.vercel.app/](https://nobelium.vercel.app/)
 
 <details><summary>Screenshot</summary>
 <img src="https://github.com/craigary/nobelium/blob/main/desktop.png?raw=true">
 </details>
 
+## Highlights ✨
 
-## Amazing points ✨
-- **🚀 Fast and responsive**
-  - Fast page render and responsive design
-  - Static generation and quick building using an efficient compiler  
-- **🤖 Serverless and automated**
-  - Deploy on a free and fast platform, Vercel, in few minutes
-  - Incremental rgeneration and the content is always up to date
-- **🚙 Fully functional**
-  - Comments, quick search and tag filter
-  - RSS, about page, analytics, SSL, and more!
-- **🎨 Easy for customization**
-  - Night mode
-  - Nobelium is built using tailwindcss, easy for customization
-- **🕸 Pretty URLs and SEO friendly**  
+**🚀 &nbsp;Fast and responsive**
 
-## Getting started
-### Step 0: Star this repo
-😉
-### Step 1: Prerequisite
+- Fast page render and responsive design
+- Fast static generation with efficient compiler
 
-- Duplicate [this Notion template](https://www.notion.so/68be9021bca34b8e89f0246f27e608df)
-- Share it to the web
-### Step 2: Fork this project to customize
+**🤖 &nbsp;Deploy instantly**
+
+- Deploy on Vercel in minutes
+- Incremental regeneration and no need to redeploy after update the content in notion
+
+**🚙 &nbsp;Fully functional**
+
+- Comments, full width page, quick search and tag filter
+- RSS, analytics, web vital... and much more
+
+**🎨 &nbsp;Easy for customization**
+
+- Rich config options, support English & Chinese interface
+- Built with Tailwind CSS, easy for customization
+
+**🕸 &nbsp;Pretty URLs and SEO friendly**
+
+## Quick Start
+
+- Star this repo 😉
+- Duplicate [this Notion template](https://www.notion.so/68be9021bca34b8e89f0246f27e608df), and share it to the public
 - [Fork](https://github.com/craigary/nobelium/fork) this project
-- Customize `blog.config.js` 
-- *(Optional)* Replace `avatar.svg`, `logo.svg`, and `favicon.ico` in `/public` folder with your own
-
-### Step 3: Deploy in few seconds
-- Deploy on Vercel, set following environment variables：
-    - `NOTION_PAGE_ID`: The ID of the Notion page you previously shared to the web, usually has 32 digits after your workspace address
+- Customize `blog.config.js`
+- _(Optional)_ Replace `avatar.svg`, `favicon.svg`, and `favicon.ico` in `/public` folder with your own
+- Deploy on [Vercel](https://vercel.com), set following environment variables：
+  - `NOTION_PAGE_ID`: The ID of the Notion page you previously shared to the web, usually has 32 digits after your workspace address
 - **That's it!** Easy-peasy?
-
-## FAQ
-**Q:** Do I need to buy a server?  
-**A:** No! You can use Vercel **without any cost**!
-
-**Q:** Can I use my own domain?  
-**A:** Definitely **YES**!  
-  
-**Q:** What can I customize?  
-**A:** Literally **everything**!  
 
 ## Roadmap
 
 Check out our roadmap [here](https://www.notion.so/craigary/Public-Roadmap-3cfc4d0f0ca642ef8f652673c37add22)
 
-- [x]  Better SEO
-- [ ]  Use preact when deploying in production
-- [ ]  Add more comment system
-- [ ]  Add more analytics system
-- [ ]  Dark mode
-- [ ]  Sitemap
-- [ ]  Open Graph support
-- [ ]  Figma design file
-- [ ]  ...
+- [x] Better SEO
+- [x] Dark mode
+- [x] Open Graph support
+- [x] Switch to react-notion-x
+- [ ] Sitemap
+- [ ] Figma design file
+- [ ] ...
 
 ## Technical details
-- **Generation**: Next.js SSG and Incremental Static Regeneration
-- **Page render**: [React-notion](https://github.com/splitbee/react-notion)
-- **Style**: Tailwindcss and `@tailwindcss/jit` compiler
-- **Comments**: Gitalk and more incoming  
-[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
+- **Generation**: Next.js and Incremental Static Regeneration
+- **Page render**: [react-notion-x](https://github.com/NotionX/react-notion-x)
+- **Style**: Tailwind CSS and `@tailwindcss/jit` compiler
+- **Comments**: Gitalk and more incoming
 
 ## Special Thanks
 
@@ -87,11 +90,16 @@ Check out our roadmap [here](https://www.notion.so/craigary/Public-Roadmap-3cfc4
 </table>
 
 ## Contributors
+
 <table>
 <tr align="left">
     <td align="center"><a href="https://github.com/craigary"><img src="https://avatars.githubusercontent.com/u/10571717?s=64&v=4" width="80px;" alt=""/><br /><sub><b>Craig Hart</b></sub></a><br /><a href="https://github.com/craigary/nobelium/commits?author=craigary" title="Owner">🎫 🔧 🎨 🐛</a></td>
     <td align="center"><a href="https://github.com/reycn"><img src="https://avatars.githubusercontent.com/u/11225092?s=64&v=4" width="80px;" alt=""/><br /><sub><b>Reynard</b></sub></a><br /><a href="https://github.com/craigary/nobelium/commits?author=reycn" title="Owner"> 🎨 🐛</a></td>
-    <td align="center"><a href="https://github.com/Niinjoy"><img src="https://avatars.githubusercontent.com/u/39721307?s=64&v=4" width="80px;" alt=""/><br /><sub><b>Niin</b></sub></a><br /><a href="https://github.com/craigary/nobelium/commits?author=craigary" title="Owner">🔧 🐛</a></td>
-    <td align="center"><a href="https://github.com/ruter"><img src="https://avatars.githubusercontent.com/u/8568876?s=64&v=4" width="80px;" alt=""/><br /><sub><b>Ruter</b></sub></a><br /><a href="https://github.com/craigary/nobelium/commits?author=craigary" title="Owner">🔧 🐛</a></td>
+    <td align="center"><a href="https://github.com/Niinjoy"><img src="https://avatars.githubusercontent.com/u/39721307?s=64&v=4" width="80px;" alt=""/><br /><sub><b>Niin</b></sub></a><br /><a href="https://github.com/craigary/nobelium/commits?author=Niinjoy" title="Owner">🔧 🐛</a></td>
+    <td align="center"><a href="https://github.com/ruter"><img src="https://avatars.githubusercontent.com/u/8568876?s=64&v=4" width="80px;" alt=""/><br /><sub><b>Ruter</b></sub></a><br /><a href="https://github.com/craigary/nobelium/commits?author=ruter" title="Owner">🔧 🐛</a></td>
   </tr>
 </table>
+
+## License
+
+The MIT License.
