@@ -16,16 +16,21 @@ const BlogPost = ({ post, blockMap, emailHash }) => {
 }
 
 export async function getStaticPaths () {
-  const posts = await getAllPosts({ includePages: true })
+  // Don't prerender all 900+ pages at build time — generates them on-demand
   return {
-    paths: posts.map(row => `${BLOG.path}/${row.slug}`),
-    fallback: true
+    paths: [],
+    fallback: 'blocking'
   }
 }
 
 export async function getStaticProps ({ params: { slug } }) {
   const posts = await getAllPosts({ includePages: true })
   const post = posts.find(t => t.slug === slug)
+
+  if (!post) {
+    return { notFound: true }
+  }
+
   const blockMap = await getPostBlocks(post.id)
   const emailHash = createHash('md5')
     .update(BLOG.email)
@@ -35,7 +40,7 @@ export async function getStaticProps ({ params: { slug } }) {
 
   return {
     props: { post, blockMap, emailHash },
-    revalidate: 1
+    revalidate: 60
   }
 }
 
