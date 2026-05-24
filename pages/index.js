@@ -15,7 +15,7 @@ export async function getStaticProps () {
       postsToShow,
       showNext
     },
-    revalidate: 60
+    revalidate: 86400
   }
 }
 
