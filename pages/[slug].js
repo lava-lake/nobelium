@@ -28,7 +28,9 @@ export async function getStaticProps ({ params: { slug } }) {
   const post = posts.find(t => t.slug === slug)
 
   if (!post) {
-    return { notFound: true }
+    // Cache the 404 for a day so repeat probes of the same junk path
+    // don't each trigger a fresh ISR write + full Notion fetch
+    return { notFound: true, revalidate: 86400 }
   }
 
   const blockMap = await getPostBlocks(post.id)
@@ -40,7 +42,7 @@ export async function getStaticProps ({ params: { slug } }) {
 
   return {
     props: { post, blockMap, emailHash },
-    revalidate: 86400
+    revalidate: 604800
   }
 }
 

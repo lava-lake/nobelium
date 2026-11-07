@@ -9,6 +9,11 @@ export async function getStaticProps ({ params }) {
   const currentTag = params.tag
   const posts = await getAllPosts({ includePages: false })
   const tags = getAllTagsFromPosts(posts)
+  // Unknown tag: 404 instead of generating a real (empty) page —
+  // otherwise any junk /tag/<word> costs an ISR write
+  if (!(currentTag in tags)) {
+    return { notFound: true, revalidate: 86400 }
+  }
   const filteredPosts = posts.filter(
     post => post && post.tags && post.tags.includes(currentTag)
   )
@@ -18,7 +23,7 @@ export async function getStaticProps ({ params }) {
       posts: filteredPosts,
       currentTag
     },
-    revalidate: 86400
+    revalidate: 604800
   }
 }
 

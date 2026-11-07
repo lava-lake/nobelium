@@ -17,19 +17,26 @@ const Page = ({ postsToShow, page, showNext }) => {
 export async function getStaticProps (context) {
   const { page } = context.params // Get Current Page No.
   const posts = await getAllPosts({ includePages: false })
-  const postsToShow = posts.slice(
-    BLOG.postsPerPage * (page - 1),
-    BLOG.postsPerPage * page
-  )
   const totalPosts = posts.length
-  const showNext = page * BLOG.postsPerPage < totalPosts
+  const pageNum = Number(page)
+  const totalPages = Math.max(1, Math.ceil(totalPosts / BLOG.postsPerPage))
+  // Out-of-range page: 404 instead of generating an empty page —
+  // otherwise any /page/<number> costs an ISR write
+  if (!Number.isInteger(pageNum) || pageNum < 1 || pageNum > totalPages) {
+    return { notFound: true, revalidate: 86400 }
+  }
+  const postsToShow = posts.slice(
+    BLOG.postsPerPage * (pageNum - 1),
+    BLOG.postsPerPage * pageNum
+  )
+  const showNext = pageNum * BLOG.postsPerPage < totalPosts
   return {
     props: {
       page, // Current Page
       postsToShow,
       showNext
     },
-    revalidate: 86400
+    revalidate: 604800
   }
 }
 

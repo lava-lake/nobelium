@@ -38,5 +38,37 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/\\.env.*",
+      "destination": "/404",
+      "permanent": false
+    },
+    {
+      "source": "/wp-.*",
+      "destination": "/404",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)\\.php",
+      "destination": "/404",
+      "permanent": false
+    },
+    {
+      "source": "/\\.git/.*",
+      "destination": "/404",
+      "permanent": false
+    },
+    {
+      "source": "/phpinfo.*",
+      "destination": "/404",
+      "permanent": false
+    },
+    {
+      "source": "/actuator/.*",
+      "destination": "/404",
+      "permanent": false
+    }
   ]
 }
