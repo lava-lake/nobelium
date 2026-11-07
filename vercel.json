@@ -41,32 +41,32 @@
   ],
   "redirects": [
     {
-      "source": "/\\.env.*",
+      "source": "/:file(.env.*)",
       "destination": "/404",
       "permanent": false
     },
     {
-      "source": "/wp-.*",
+      "source": "/:file(wp-.*)",
       "destination": "/404",
       "permanent": false
     },
     {
-      "source": "/(.*)\\.php",
+      "source": "/:path(.*\\.php)",
       "destination": "/404",
       "permanent": false
     },
     {
-      "source": "/\\.git/.*",
+      "source": "/:path(.git/.*)",
       "destination": "/404",
       "permanent": false
     },
     {
-      "source": "/phpinfo.*",
+      "source": "/:file(phpinfo.*)",
       "destination": "/404",
       "permanent": false
     },
     {
-      "source": "/actuator/.*",
+      "source": "/actuator/:path*",
       "destination": "/404",
       "permanent": false
     }
